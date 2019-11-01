@@ -89,6 +89,14 @@ namespace Microsoft.FSharp.Collections
 
         /// <summary>Returns the highest element in the set according to the ordering being used for the set.</summary>
         member MaximumElement: 'T
+        
+        /// <summary>Returns the lowest element in the set according to the ordering being used for the set.
+        /// Returns <c>None</c> if the set is empty.</summary>
+        member TryMinimumElement: 'T option
+        
+        /// <summary>Returns the highest element in the set according to the ordering being used for the set.
+        /// Returns <c>None</c> if the set is empty.</summary>
+        member TryMaximumElement: 'T option
 
         interface ICollection<'T> 
         interface IEnumerable<'T> 
@@ -291,6 +299,18 @@ namespace Microsoft.FSharp.Collections
         /// <returns>The max value from the set.</returns>
         [<CompiledName("MaxElement")>]
         val maxElement: set:Set<'T> -> 'T
+
+        /// <summary>Returns the lowest element in the set according to the ordering being used for the set.</summary>
+        /// <param name="set">The input set.</param>
+        /// <returns>The min value from the set. <c>None</c> if the set is empty.</returns>
+        [<CompiledName("TryMinElement")>]
+        val tryMinElement: set:Set<'T> -> 'T option
+
+        /// <summary>Returns the highest element in the set according to the ordering being used for the set.</summary>
+        /// <param name="set">The input set.</param>
+        /// <returns>The max value from the set. <c>None</c> if the set is empty.</returns>
+        [<CompiledName("TryMaxElement")>]
+        val tryMaxElement: set:Set<'T> -> 'T option
 
         /// <summary>Builds a set that contains the same elements as the given list.</summary>
         /// <param name="elements">The input list.</param>
