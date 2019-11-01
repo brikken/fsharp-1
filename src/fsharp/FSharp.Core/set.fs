@@ -379,6 +379,10 @@ namespace Microsoft.FSharp.Collections
             match maximumElementOpt s with 
             | Some(k) -> k
             | None -> invalidArg "s" (SR.GetString(SR.setContainsNoElements)) 
+            
+        let tryMinimumElement s = minimumElementOpt s
+        
+        let tryMaximumElement s = maximumElementOpt s
 
 
         //--------------------------------------------------------------------------
