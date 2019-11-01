@@ -85,9 +85,11 @@ namespace Microsoft.FSharp.Collections
 
 
         /// <summary>Returns the lowest element in the set according to the ordering being used for the set.</summary>
+        /// <exception cref="System.ArgumentException">If the set is empty.</exception>
         member MinimumElement: 'T
 
         /// <summary>Returns the highest element in the set according to the ordering being used for the set.</summary>
+        /// <exception cref="System.ArgumentException">If the set is empty.</exception>
         member MaximumElement: 'T
         
         /// <summary>Returns the lowest element in the set according to the ordering being used for the set.
@@ -291,12 +293,14 @@ namespace Microsoft.FSharp.Collections
         /// <summary>Returns the lowest element in the set according to the ordering being used for the set.</summary>
         /// <param name="set">The input set.</param>
         /// <returns>The min value from the set.</returns>
+        /// <exception cref="System.ArgumentException">If the set is empty.</exception>
         [<CompiledName("MinElement")>]
         val minElement: set:Set<'T> -> 'T
 
         /// <summary>Returns the highest element in the set according to the ordering being used for the set.</summary>
         /// <param name="set">The input set.</param>
         /// <returns>The max value from the set.</returns>
+        /// <exception cref="System.ArgumentException">If the set is empty.</exception>
         [<CompiledName("MaxElement")>]
         val maxElement: set:Set<'T> -> 'T
 
