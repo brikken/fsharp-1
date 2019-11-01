@@ -672,6 +672,10 @@ namespace Microsoft.FSharp.Collections
         [<DebuggerBrowsable(DebuggerBrowsableState.Never)>]
         member x.MaximumElement = SetTree.maximumElement x.Tree
 
+        member x.TryMinimumElement = SetTree.tryMinimumElement x.Tree
+
+        member x.TryMaximumElement = SetTree.tryMaximumElement x.Tree
+
         member x.IsSubsetOf(otherSet: Set<'T>) = SetTree.subset x.Comparer x.Tree otherSet.Tree 
 
         member x.IsSupersetOf(otherSet: Set<'T>) = SetTree.subset x.Comparer otherSet.Tree x.Tree
@@ -858,6 +862,12 @@ namespace Microsoft.FSharp.Collections
 
         [<CompiledName("MaxElement")>]
         let maxElement (set: Set<'T>) = set.MaximumElement
+
+        [<CompiledName("TryMinElement")>]
+        let tryMinElement (set: Set<'T>) = set.TryMinimumElement
+
+        [<CompiledName("TryMaxElement")>]
+        let tryMaxElement (set: Set<'T>) = set.TryMaximumElement
 
 
 
